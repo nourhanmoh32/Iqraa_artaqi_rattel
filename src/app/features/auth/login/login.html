@@ -1,45 +1,45 @@
-<section>        
+<!-- <section>         -->
     <!-- <img src="/assets/images/1f2b03a2899af5320ab145cac48bce48.jpg" alt="" style=""> -->
-    <div class="logForm">
+    <!-- <div class="logForm">
         <div id="logIn" class=" mb-3 container" >
             <h2>تسجيل الدخول</h2>
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="form1" >
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="form1" > -->
                 <!-- email input -->
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">البريد الإلكتروني</label>
                     <input formControlName="email" type="email" class="form-control" id="yourCode" placeholder="أدخل البريد الإلكتروني الخاص بك">
-                </div>
+                </div> -->
                 <!-- reqierd email -->
-                @if (email?.invalid && email?.touched) {
+                <!-- @if (email?.invalid && email?.touched) {
                     <div class="errors">
                         <p>البريد الإلكتروني مطلوب!</p>
                     </div>
                 }
-                
+                 -->
                 <!-- password input -->
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">الرقم السري</label>
                     <input formControlName="password" type="password" class="form-control" id="password" placeholder="أدخل الرقم السري الخاص بك">
-                </div>
+                </div> -->
                 <!-- reqierd pass -->
-                @if (password?.invalid &&  password?.touched) {
+                <!-- @if (password?.invalid &&  password?.touched) {
                     <div class="errors">
                         <p>ادخل الرقم السري الصحيح!</p>
                     </div>
-                }
+                } -->
 
                 <!-- forget password & remember me -->
-                <div class="forgot-remember">
+                <!-- <div class="forgot-remember">
                     <a class="forgot text-danger" routerLink="/forgotPass">هل نسيت كلمة السر؟</a>
 
                     <label class="remember">
                         تَذَكرني
                         <input type="checkbox" formControlName="rememberMe">
                     </label>
-                </div>
+                </div> -->
             
                 <!-- entering button  -->
-                <button type="submit" id="log" [disabled]="loginForm.invalid">تسجيل الدخول</button> 
+                <!-- <button type="submit" id="log" [disabled]="loginForm.invalid">تسجيل الدخول</button> 
             </form>
             <div class="small-p">
             <p>ليس لديك حساب؟</p>
@@ -47,4 +47,47 @@
             </div>
         </div>
     </div>
-</section>    
+</section>     -->
+<!-- ------------------------------------------------------- -->
+
+<section>        
+    <div class="logForm">
+        <div id="logIn" class="mb-3 container">
+            <h2>تسجيل الدخول</h2>
+            
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="form1">
+                
+                <div class="mb-2">
+                    <label class="form-label">البريد الإلكتروني</label>
+                    <input formControlName="email" type="email" class="form-control" placeholder="أدخل البريد الإلكتروني الخاص بك">
+                    <p class="errors">
+                        @if (email?.invalid && email?.touched) {البريد الإلكتروني مطلوب!*}
+                    </p>
+                </div>
+                
+                <div class="mb-2">
+                    <label class="form-label">الرقم السري</label>
+                    <input formControlName="password" type="password" class="form-control" placeholder="أدخل الرقم السري الخاص بك">
+                    <p class="errors">
+                        @if (password?.invalid && password?.touched) {ادخل الرقم السري الصحيح!*}
+                    </p>
+                </div>
+
+                <div class="forgot-remember">
+                    <label class="remember">
+                        <input type="checkbox" formControlName="rememberMe">
+                        تَذَكرني
+                    </label>
+                    <a class="forgot" routerLink="/forgotPass">هل نسيت كلمة السر؟</a>
+                </div>
+            
+                <button type="submit" id="log" [disabled]="loginForm.invalid">تسجيل الدخول</button> 
+            </form>
+
+            <div class="small-p">
+                <p>ليس لديك حساب؟</p>
+                <a routerLink="/register">تسجيل جديد!</a>
+            </div>
+        </div>
+    </div>
+</section>

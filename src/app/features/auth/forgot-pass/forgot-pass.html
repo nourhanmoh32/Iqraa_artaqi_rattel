@@ -10,13 +10,12 @@
                 <div class=" mb-3">
                     <label for="formGroupExampleInput" class="form-label">البريد الإلكتروني</label>
                     <input formControlName="email" type="text" class="form-control" id="yourCode" placeholder="أدخل البريد الإلكتروني الخاص بك">
-                </div>   
-                 <!-- reqierd email -->
-                @if (email?.invalid && email?.touched) {
+                    <!-- reqierd email -->
                     <div class="errors">
-                        <p>البريد الإلكتروني مطلوب!</p>
-                    </div>
-                }         
+                        @if (email?.invalid && email?.touched) {البريد الإلكتروني مطلوب!}
+                    </div> 
+                </div>   
+                 
 
                 <button type="submit">استمرار..</button>
             </form>

@@ -44,6 +44,7 @@ section{
   gap: 16px;
   display: flex;
   flex-wrap: wrap;
+  height: 100%;
 }
 .progressCards .row{
     display: flex;
@@ -53,6 +54,7 @@ section{
 }
 .progressCards .progCard {
   max-width: 200px;
+  height: 100%;
   gap: 5px;   
   display: flex;
   flex-direction: column;
